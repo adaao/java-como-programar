@@ -23,5 +23,8 @@ public class Reader {
     public static int intReader(){
         return reader().nextInt();
     }
-        
+    
+    public static String stringReader(){
+        return reader().next();
+    }
 }
