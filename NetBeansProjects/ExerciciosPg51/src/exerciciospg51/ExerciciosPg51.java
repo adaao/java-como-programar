@@ -29,7 +29,7 @@ public class ExerciciosPg51 {
         
         while (opc == VAZIA){
             System.out.println("digite uma opcao: ");
-            System.out.printf("1 - circulo;%n2 - modulo%n");
+            System.out.printf("1 - circulo;%n2 - modulo;%n3 - quadrados e cubos;%n");
             opc = console.next();
             switch (opc){
                 case "1":
@@ -37,6 +37,9 @@ public class ExerciciosPg51 {
                     break;
                 case "2":
                     module();
+                    break;
+                case "3":
+                    quadradosECubos();
                     break;
                 default:
                     System.out.println("Opcao inválida!!!");
@@ -138,5 +141,41 @@ public class ExerciciosPg51 {
         }else{
             separadorDeNumeros(resto);
         }
+    }
+    
+    public static void quadradosECubos(){
+        int n;
+        
+        System.out.println("---- Qadrados e Cubos dos numeros de 0 a 10 ----");
+        System.out.printf("%nnumber   square   cube%n");
+        for (int i = 0; i < 11; i++){
+            System.out.printf("%d", i);
+            printaEspacos(i);      
+            System.out.printf("%.0f", Math.pow(i, 2));
+            n = (int) Math.pow(i, 2);
+            printaEspacos(n);
+            System.out.printf("%.0f%n", Math.pow(i, 3));
+            
+        }
+    }
+    
+    public static void printaEspacos(int i){
+        if(i<10){
+            System.out.printf("%s", retornaEspacos(8));
+        }
+        if(i > 9 && i < 100){
+            System.out.printf("%s", retornaEspacos(7));
+        }
+        if(i > 99){
+            System.out.printf("%s", retornaEspacos(6));
+        }
+    }
+    
+    public static String retornaEspacos(int b){
+        String s = "";
+        for(int i = 0; i < b; i++){
+            s += " ";
+        }
+        return s;
     }
 }
